@@ -8,7 +8,7 @@ import Projects from './components/Projects';
 import SkillsAquarium from './components/SkillsAquarium';
 import Certifications from './components/Certifications';
 import Footer from './components/Footer';
-import resumeData from './data/resumeData';
+//import resumeData from './data/resumeData';
 import Contact from './components/Contact';
 
 

@@ -316,7 +316,9 @@ export default function Contact() {
 
       {/* Social Icons */}
       <div className="mt-12 flex justify-center gap-6 text-2xl text-white">
-        <a href="mailto:pavanbhople147@gmail.com" className="hover:text-purple-400 transition">
+        <a href="mailto:pavan@gmail.com" className="hover:text-purple-400 transition" target="_blank" rel="noreferrer">
+  
+          
           <FiMail />
         </a>
         <a
