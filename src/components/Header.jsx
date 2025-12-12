@@ -118,12 +118,14 @@
 // }
 
 
-
 // src/components/Header.jsx
 import React, { useState, useEffect } from "react";
 import { FiDownload } from "react-icons/fi";
 import { FaLinkedin, FaWhatsapp, FaInstagram, FaFacebook, FaGithub } from "react-icons/fa";
 import resumeData from "../data/resumeData";
+
+// ✅ FIX: Move typingTexts outside component (ESLint + Netlify build success)
+const typingTexts = ["Network Engineer", "Frontend Developer", "Graphic Designer"];
 
 export default function Header() {
   const navLinks = [
@@ -136,8 +138,7 @@ export default function Header() {
     { name: "Contact", link: "#contact" },
   ];
 
-  // Typing Animation
-  const typingTexts = ["Network Engineer", "Frontend Developer", "Graphic Designer"];
+  // Typing Animation States
   const [displayText, setDisplayText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -171,12 +172,11 @@ export default function Header() {
     }
 
     return () => clearTimeout(timer);
-
-  }, [charIndex, textIndex, typingTexts]); // <-- FIXED: added typingTexts
+  }, [charIndex, textIndex]); // ✔ typingTexts removed → stable deps (no ESLint error)
 
   return (
     <header className="w-full">
-      {/* Top Section */}
+      {/* Top Section: Profile Left + Social Right */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-8 px-6 md:px-12 bg-black/50 backdrop-blur-md border-b border-white/10 rounded-b-3xl shadow-lg">
         
         {/* Left: Profile */}
@@ -189,7 +189,7 @@ export default function Header() {
             />
           </div>
 
-          {/* Name + Typing */}
+          {/* Name + Typing Text */}
           <div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
               {resumeData.name}
@@ -200,8 +200,9 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Right: Resume + Social */}
+        {/* Right: Resume + Social Links */}
         <div className="flex flex-col md:flex-row items-center gap-4 mt-4 md:mt-0">
+          {/* Resume Button */}
           <a
             href="/resume/Pavan_Bhople_Resume.pdf"
             target="_blank"
@@ -212,6 +213,7 @@ export default function Header() {
             <FiDownload /> Resume
           </a>
 
+          {/* Social Icons */}
           <div className="flex gap-4 text-2xl mt-2 md:mt-0">
             <a href={resumeData.contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-transform hover:-translate-y-1"><FaLinkedin /></a>
             <a href={resumeData.contact.github} target="_blank" rel="noreferrer" className="hover:text-gray-400 transition-transform hover:-translate-y-1"><FaGithub /></a>
@@ -222,7 +224,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Navigation */}
+      {/* Navigation Bar */}
       <nav className="flex justify-center gap-6 py-4 bg-black/60 backdrop-blur-md sticky top-0 z-50 border-b border-white/10 shadow-md">
         {navLinks.map((nav) => (
           <a
@@ -238,3 +240,4 @@ export default function Header() {
     </header>
   );
 }
+
