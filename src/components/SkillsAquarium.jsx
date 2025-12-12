@@ -32,7 +32,10 @@ const rand = (min, max) => Math.random() * (max - min) + min;
 export default function SkillsAquarium() {
   const tankRef = useRef(null);
   const [cursorPos, setCursorPos] = useState({ x: null, y: null });
-  const [timeTick, setTimeTick] = useState(0);
+  //const [timeTick, setTimeTick] = useState(0);
+  // Omit the unused state variable
+const [, setTimeTick] = useState(0);
+
 
   // fish
   const [fishData, setFishData] = useState(
