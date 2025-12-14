@@ -71,7 +71,7 @@ Skilled in working under pressure and adapting to new situations and challenges 
     {
       degree: 'Class XII (HSC)',
       institute: 'Shree Goraksha Arts, Commerce & Science Senior College',
-      year: 'Jun 2020 – Jul 2025',
+      year: 'Jun 2019 – Jul 2020',
       percentage: 76.77,
     },
     // {
@@ -86,14 +86,14 @@ Skilled in working under pressure and adapting to new situations and challenges 
       name: 'Fintech Services Website',
       desc: 'Built service pages using React.js, CSS3, Bootstrap with login/payment workflows. Designed Canva icons and optimized UI/UX, SEO, and performance.',
       tech: ['React.js', 'Bootstrap', 'CSS3', 'Canva', 'SEO'],
-      img: 'https://via.placeholder.com/800x400?text=Fintech+Website',
+      img: 'https://via.placeholder.com/800x400?text=Face+Recognition',
       link: '#',
     },
     {
       name: 'Face Recognition Attendance System',
       desc: 'Developed real-time attendance system with Python, OpenCV, face recognition. Integrated MySQL & CSV for data storage and scalability.',
       tech: ['Python', 'OpenCV', 'MySQL'],
-      img: 'https://via.placeholder.com/800x400?text=Face+Recognition',
+      img: 'https://via.placeholder.com/800x400?text=Fintech+Website',
       link: '#',
     },
     {

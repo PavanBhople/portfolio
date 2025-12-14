@@ -4,8 +4,8 @@ import Badge from './Badge';
 
 export default function Projects() {
   const projectImages = [
-    '/face recognition.jpg',
     '/Air Canvas.jpg',
+    '/face recognition.jpg',
     '/voice assistant.jpg',
     '/coffee shop.jpg',
     '/my-portfolio.jpg',
